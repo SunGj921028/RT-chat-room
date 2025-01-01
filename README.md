@@ -29,7 +29,7 @@
     - `./client <IP_address> <port_number>`
       - （IP address, port number 需要對到要連接的 server）
 3. 依照印出的選項執行其他功能操作
-![image]()
+![image](https://github.com/SunGj921028/RT-chat-room/blob/main/img/example.png)
 
 ---
 
