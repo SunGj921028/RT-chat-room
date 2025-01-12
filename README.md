@@ -1,6 +1,6 @@
 ### Project Description
 - **real-time online chatroom** application with **secure communication**
-  - allows users to communicate through various media types, including text, files, and live video streaming.
+  - allows users to communicate through various media types, including text message, files, and video streaming.
 
 ---
 
