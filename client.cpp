@@ -210,7 +210,7 @@ void* receiveMessages(void* arg) {
                 isReceivedMsg = true;  //? 在上面的送出後，等待到 client 接收到 server 的回覆，才會正常印出下面的內容
             }else{
                 isReceivedMsg = false; //? 確認當前有收到過 server 的回覆
-                usleep(400000); // Delay for 1ms
+                usleep(400000); // Delay for 4ms
                 system("clear");
                 cout << "\033[33m[Server]: " << message << "\033[0m" << endl;
                 if(message == rejectMsg){
@@ -268,12 +268,12 @@ void* receiveMessages(void* arg) {
         }else{
             if(message.find("INFO:") != string::npos && !isSendingAudio){
                 istringstream stream(message);
-                stream.ignore(5); // 跳过 "INFO:"
+                stream.ignore(5); // 跳過 "INFO:"
                 string bytesLabel = "", separator = "", name = "", hashValue = "";
                 ssize_t bytes = 0;
                 stream >> bytes >> bytesLabel >> separator;
                 getline(stream, name, '|');
-                name = trim(name); // 假設有 trim 函數，或使用下面的實作
+                name = trim(name);
                 // 讀取 hash value，並移除所有空格
                 getline(stream, hashValue, '|');
                 hashValue = trim(hashValue);
@@ -340,7 +340,7 @@ void* receiveMessages(void* arg) {
             }else if(message.find("AUDIOINFO:") != string::npos){
                 isSendingAudio = true;
                 istringstream stream(message);
-                stream.ignore(10); // 跳过 "AUDIOINFO:"
+                stream.ignore(10); // 跳過 "AUDIOINFO:"
                 //! Message format: "AUDIOINFO:xxx bytes | filename | username"
                 ssize_t bytes = 0;
                 string bytesLabel = "", separator = "", Audioname = "", targetUserName = "";
@@ -375,7 +375,7 @@ int main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);
     }
 
-    // signal(SIGINT, handle_signal);
+    signal(SIGINT, handle_signal);
 
     isRejected = false;
 
@@ -426,7 +426,7 @@ int main(int argc, char *argv[]) {
     if (status != 0) {
         dprintf(STDERR_FILENO, "getaddrinfo: %s\n", gai_strerror(status));
         close(clientSocket);
-        exit(1);
+        return -1;
     }
 
     //! Connect to server with timeout
