@@ -6,7 +6,7 @@ using namespace std;
 
 int serverFdTmp;
 
-// 信号处理函数
+// signal processing function
 void handle_signal(int sig) {
     if (sig == SIGINT) {
         printf("\nServer shutting down...\n");
