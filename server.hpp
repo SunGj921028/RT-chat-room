@@ -14,8 +14,8 @@
 #include <openssl/ssl.h>
 #include <openssl/err.h>
 
-#define MAX_CLIENTS 2
-#define MAX_WORKERS 2
+#define MAX_CLIENTS 10
+#define MAX_WORKERS 10
 
 using namespace std;
 
