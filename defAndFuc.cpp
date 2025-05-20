@@ -45,11 +45,11 @@ const vector<string> colors = {
 
 void printHelp() {
     cout << "\nAvailable commands:" << endl;
-    cout << "1. register <username> <password>" << endl;
-    cout << "2. login <username> <password>" << endl;
-    cout << "3. logout" << endl;
-    cout << "4. exit" << endl;
-    cout << "5. send" << endl;
+    cout << ">>> register <username> <password>" << endl;
+    cout << ">>> login <username> <password>" << endl;
+    cout << ">>> logout" << endl;
+    cout << ">>> exit" << endl;
+    cout << ">>> send" << endl;
     cout << "-----------------------------------------\n";
 }
 

@@ -1,0 +1,6 @@
+Implement a file transfer feature based on existing communication system.
+Requirements
+Send and receive files in chunks.
+Design and implement your own method for file selection on the sender's side and file saving on the receiver's side.
+Need encryption with OpenSSL
+You are only allowed to use standard library and POSIX library. 

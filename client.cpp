@@ -210,7 +210,7 @@ void* receiveMessages(void* arg) {
                 isReceivedMsg = true;  //? 在上面的送出後，等待到 client 接收到 server 的回覆，才會正常印出下面的內容
             }else{
                 isReceivedMsg = false; //? 確認當前有收到過 server 的回覆
-                usleep(400000); // Delay for 4ms
+                usleep(200000); // Delay for 100ms
                 system("clear");
                 cout << "\033[33m[Server]: " << message << "\033[0m" << endl;
                 if(message == rejectMsg){
