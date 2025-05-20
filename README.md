@@ -47,7 +47,7 @@
 
 ### 檔案簡易說明
 ```cpp
-code/
+RT-chat-room/
 ├── client.cpp      // client 端的功能實作
 ├── server.cpp      // server 端的功能實作
 ├── server.hpp      // server 的 class，儲存與定義 server 相關內容
@@ -60,6 +60,7 @@ code/
 ├── defAndFuc.cpp   // 通用 function 實作，變數放置處
 └── defAndFuc.hpp   // 通用 function 與變數定義
 ```
+- 傳輸檔案的過程中會有一些資料夾被產生以儲存傳輸的檔案
 
 ---
 
@@ -86,10 +87,12 @@ code/
   - 擴展溝通系統，新增檔案傳輸的功能，支援 client-server 以及 client-client
   - 檔案將透過切分 chunks 的方式傳送
   - 傳送內容同樣透過 SSL 進行加密解密
+  - 傳輸的檔案需放在與程式同層級的資料夾 RT-chat-room/ 裡
 - **Audio Streaming**
   - **frame-based streaming feature for audio**
   - 傳送內容同樣透過 SSL 進行加密解密
   - 透過 `alsa-utils` 撥放音訊（使用 `aplay`）
+  - 傳輸的檔案需放在與程式同層級的資料夾 RT-chat-room/ 裡
 - **GUI Interface**
   - 將不同 client 所傳遞的內容都印上了不同的代表顏色，方便分辨哪些內容是哪些 client 傳遞的
   - server 給 client 的回覆也統一印上了黃色
