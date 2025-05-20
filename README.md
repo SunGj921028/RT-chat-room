@@ -26,7 +26,7 @@
 ---
 
 ### How to use
-1. 進入 code/ 資料夾，並執行 `make` 編譯出 `client` 以及 `server` 可執行檔
+1. 執行 `make` 編譯出 `client` 以及 `server` 可執行檔
 2. 使用以下方式執行兩個可執行檔（server 需先執行）
     - `./server <port_number>`
     - `./client <IP_address> <port_number>`
